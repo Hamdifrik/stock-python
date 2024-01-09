@@ -1,0 +1,44 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card add-user-container">
+          <div class="card-header card-header-bordeaux">
+            <h4 class="card-title">Formulaire de commande</h4>
+            <p class="card-category">Remplir les détails de la commande</p>
+          </div>
+
+          <form (submit)="addCommande()" class="add-user-form">
+            <div *ngFor="let product of commande.products; let i = index" class="form-group">
+              <label for="code_client">Code Client</label>
+              <select class="form-control" id="product{{i}}" [(ngModel)]="commande.client.code_client" name="product{{i}}" required>
+                <option *ngFor="let client of clients" [value]="client.code_client">{{client.code_client}}</option>
+              </select>
+            </div>
+
+            <!-- Autres champs de formulaire comme avant -->
+
+        <!-- Section des produits -->
+<div *ngFor="let product of commande.products; let i = index" class="form-group">
+  <label for="product{{i}}">Produit {{i + 1}}</label>
+  <select class="form-control" id="product{{i}}" [(ngModel)]="product.code_prod" name="product{{i}}" required>
+    <option *ngFor="let prod of products" [value]="prod.code_prod">{{prod.nom_prod}}</option>
+  </select>
+  <label for="quantity{{i}}">Quantité</label>
+  <input type="number" class="form-control" placeholder="Quantité" [(ngModel)]="product.quantite" name="quantity{{i}}" required>
+
+  <!-- Bouton pour supprimer le produit actuel -->
+  <button type="button" class="btn btn-danger" (click)="removeProduct(i)">Supprimer</button>
+</div>
+
+<!-- Bouton pour ajouter un nouveau produit -->
+<button type="button" class="btn btn-primary" (click)="addProduct()">Ajouter produit</button>
+
+
+            <button type="submit" class="MuiButton-root custom-button">Ajouter commande</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

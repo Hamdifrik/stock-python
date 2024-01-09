@@ -1,0 +1,59 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-bordeaux">
+            <h4 class="card-title">Tables des Commandes </h4>
+            <p class="card-category"> Products commandes</p>
+            <button type="button" class="btn btn-success" (click)="showAddCommandeForm()" >
+              <i class="fa fa-plus"></i> Ajouter Commande
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <th>code Commande</th>
+                  <th>Date Commande</th>
+                  <th>Nom Client</th>
+                  <th>Prfenom Client</th>
+                  <th>Total</th>
+                  <th>Actions</th> 
+                </thead>
+                <tbody>
+                  <tr *ngFor="let prod of clients">
+                    <td>{{ prod.code_commande}}</td>
+                    
+                    <td>{{ prod.date_commande }}</td>
+                    <td>{{ prod.client.nom_client }}</td>
+                    <td>{{ prod.client.prenom }}</td>
+                    <td>{{ prod.total_command_amount }}</td>
+                    <td>
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-danger">
+                          <i class="fa fa-trash"></i> 
+                        </button>
+                        
+                        <button type="button" class="btn btn-primary" (click)="editCommand(prod.code_commande)">
+                          <i class="fa fa-edit"></i> 
+                        </button>
+                      
+                      
+                        <button type="button" class="btn btn-info"  (click)="showDetails(prod)" >
+                          <i class="fa fa-eye"></i> 
+                        </button>
+                      </div>
+                      
+                    </td>
+                   
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

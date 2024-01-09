@@ -1,0 +1,135 @@
+.card-header-bordeaux {
+  background-color: #8A182B;
+  color: #fff;
+  width: 104%;
+  left: -4%;
+  padding: 15px;
+  margin-top: 19px; 
+  box-sizing: border-box;
+}
+
+
+
+/* Styles personnalisés pour le composant AddUser */
+
+.add-user-container {
+  margin: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.add-user-form {
+  margin-top: 20px;
+}
+
+.add-user-form label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+.add-user-form .MuiButton-root {
+  margin-top: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-user-form .MuiButton-root:hover {
+  background-color: #0056b3;
+}
+
+/* AddProduct.css */
+
+.add-product-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.add-product-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-product-form .MuiTextField-root {
+  margin-bottom: 20px;
+}
+
+.add-product-form input[type="file"] {
+  margin-top: 20px;
+}
+
+.add-product-form .MuiButton-root {
+  margin-top: 20px;
+}
+
+.add-product-form .MuiTypography-root {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-product-form .MuiButton-containedPrimary {
+  background-color: #007bff;
+}
+
+.add-product-form .MuiButton-containedPrimary:hover {
+  background-color: #0056b3;
+}
+
+.add-product-form .MuiButton-containedPrimary:disabled {
+  background-color: #b3d9ff;
+}
+
+
+
+
+/* désaigne pour uplode photo de product */
+/* Stylisation de l'élément d'upload de photo */
+.form-control-file {
+  display: none; /* Cacher l'élément de base */
+}
+
+.custom-upload-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #ccc;
+  background-color: #f9f9f9;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.custom-upload-container:hover {
+  border-color: #aaa;
+}
+
+.custom-upload-text {
+  text-align: center;
+  color: #888;
+}
+
+.custom-upload-icon {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #aaa;
+}
+
+
+
+
+

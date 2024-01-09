@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZwT" crossorigin="anonymous">
+
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-bordeaux">
+            <h4 class="card-title">Tables des Client</h4>
+            <p class="card-category">clients détailles</p>
+
+               
+                        <button type="button" class="btn btn-success" (click)="showAddClientForm()" >
+                          <i class="fa fa-plus"></i> ajouter client 
+                        </button>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <th>Code_client</th>
+                  <th>Nom_client</th>
+                  <th>Prenom</th>
+                  <th>Email</th>
+                  <th>Adresse</th>
+                  <th>Actions</th> 
+                </thead>
+                <tbody>
+                  <tr *ngFor="let client of clients">
+                    <td>{{ client.code_client }}</td>
+                    <td>{{ client.nom_client }}</td>
+                    <td>{{ client.prenom }}</td>
+                    <td>{{ client.email }}</td>
+                    <td>{{ client.adresse }}</td>
+                    <td>
+                      <div class="btn-group" role="group">
+                     
+                        
+                        <button type="button" class="btn btn-danger" (click)="deleteClient(client.code_client)">
+                          <i class="fa fa-trash"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary" (click)="editClient(client.code_client)">
+                          <i class="fa fa-edit"></i> 
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

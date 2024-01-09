@@ -1,0 +1,51 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-bordeaux">
+            <h4 class="card-title">Tables des Produits</h4>
+            <p class="card-category">Produits détaillés</p>
+            <button type="button" class="btn btn-success"  (click)="showAddProduitForm()">
+              <i class="fa fa-plus"></i> Ajouter Produit
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <th>Code Produit</th>
+                  <th>Nom Produit</th>
+                  <th>Description</th>
+                  <th>Prix Unitaire</th>
+                  <th>Quantité</th>
+                  <th>Actions</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let prod of clients"> 
+                    <td>{{ prod.code_prod }}</td>
+                    <td>{{ prod.nom_prod }}</td>
+                    <td>{{ prod.description }}</td>
+                    <td>{{ prod.prix_unit }}</td>
+                    <td>{{ prod.quantite }}</td>
+                    
+                    <td>
+                      <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-danger" >
+                          <i class="fa fa-trash"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary"  (click)="editProduit(prod.code_prod)">
+                          <i class="fa fa-edit"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

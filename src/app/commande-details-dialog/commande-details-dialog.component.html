@@ -1,0 +1,65 @@
+<div class="invoice-box">
+  <table cellpadding="0" cellspacing="0">
+    <tr class="top">
+      <td colspan="4">
+        <table>
+          <tr>
+            <td class="title">
+              <img src="/assets/img/iteam.jpg" style="width:100%; max-width:300px;">
+            </td>
+
+<td style="text-align: right; width: 80%;">
+  <div>
+    <i class="fa fa-file-invoice"></i> Invoice #: {{ data.code_commande }}
+  </div>
+  <div>
+    <i class="fa fa-calendar-alt"></i> Created: {{ data.date_commande }}
+  </div>
+  <div>
+    <i class="fa fa-calendar-times"></i> Due: {{ data.date_commande  }}
+  </div>
+</td>
+
+            
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr class="information">
+      <td>
+        <i class="fa fa-user"></i> Name: {{ data.client.nom_client }} {{ data.client.prenom }}<br>
+        <i class="fa fa-map-marker"></i> Address: {{ data.client.adresse }}<br>
+        <i class="fa fa-envelope"></i> Email: {{ data.client.email }}
+      </td>
+      <td>
+        <!-- Informations sur le client, si nécessaire -->
+      </td>
+    </tr>
+
+    <tr class="heading">
+      <td>Product</td>
+      <td>Description</td>
+      <td>Unit Price</td>
+      <td>Quantity</td>
+      <td>Subtotal</td>
+    </tr>
+
+    <tr class="item" *ngFor="let item of data.products">
+      <td>{{ item.product.nom_prod }}</td>
+      <td>{{ item.product.description }}</td>
+      <td>{{ item.product.prix_unit | currency }}</td>
+      <td>{{ item.quantite_produit }}</td>
+      <td>{{ (item.product.prix_unit || 0) * item.quantite_produit | currency }}</td>
+    </tr>
+
+    <tr class="total">
+      <td colspan="4"></td>
+      <td>Total: {{ data.total_command_amount  }}</td>
+    </tr>
+  </table>
+
+  <button class="btn btn-primary" >Imprimer PDF</button>
+</div>
+
+

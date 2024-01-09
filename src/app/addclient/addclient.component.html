@@ -1,0 +1,43 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card add-user-container">
+
+            <div class="card-header card-header-bordeaux">
+                <h4 class="card-title">  Formulaire de Clients </h4>
+                <p class="card-category"> remplir les détailles de la client</p>
+
+            </div>
+  
+            <form (submit)="addClient()" class="add-user-form">
+              <div class="form-group">
+                <label for="adresse">Adresse</label>
+                <input type="text" class="form-control" id="adresse" [(ngModel)]="client.adresse" name="adresse" required>
+              </div>
+              <div class="form-group">
+                <label for="code_client">Code Client</label>
+                <input type="number" class="form-control" id="code_client" [(ngModel)]="client.code_client" name="code_client" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" [(ngModel)]="client.email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="nom_client">Nom Client</label>
+                <input type="text" class="form-control" id="nom_client" [(ngModel)]="client.nom_client" name="nom_client" required>
+              </div>
+              <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" class="form-control" id="prenom" [(ngModel)]="client.prenom" name="prenom" required>
+              </div>
+  
+              <button type="submit" class="MuiButton-root">Ajouter Client</button>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
